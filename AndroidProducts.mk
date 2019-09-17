@@ -15,3 +15,6 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/xtended_oneplus3.mk
+
+COMMON_LUNCH_CHOICES := \
+    xtended_oneplus3-userdebug
