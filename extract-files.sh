@@ -60,8 +60,6 @@ setup_vendor "$DEVICE" "$VENDOR" "$XTENDED_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
-"$MY_DIR"/setup-makefiles.sh
-
 DEVICE_BLOB_ROOT="$XTENDED_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 #
@@ -69,3 +67,9 @@ DEVICE_BLOB_ROOT="$XTENDED_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 #
 sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" \
     "$DEVICE_BLOB_ROOT"/etc/permissions/qti_libpermissions.xml
+
+# Load camera shim
+CAMERA_SHIM="$DEVICE_BLOB_ROOT"/vendor/lib/hw/camera.msm8996.so
+patchelf --add-needed libshim_camera.so "$CAMERA_SHIM"
+
+"$MY_DIR"/setup-makefiles.sh
