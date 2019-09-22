@@ -23,3 +23,7 @@
 
 # WLAN fwpath
 /sys/module/wlan/parameters/fwpath    u:object_r:sysfs_wlan_fwpath:s0
+
+#bt & firmware
+/bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
+/firmware(/.*)?          u:object_r:firmware_file:s0
