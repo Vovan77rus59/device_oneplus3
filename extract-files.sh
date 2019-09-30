@@ -62,7 +62,7 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
 
-DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+DEVICE_BLOB_ROOT="$XTENDED_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 #
 # Correct android.hidl.manager@1.0-java jar name
